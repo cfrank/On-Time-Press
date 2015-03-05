@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+#
+# A very simple script which
+# will be run when I click on
+# the time in my WM. It will
+# show a few time/date specific
+# things through the notify_send
+# function
+#
+
+# The current date (January 1 1970)
+CURRENT_DATE=$(date +"%B %d %Y")
+
+# The current 12 hour time
+T_HOUR_TIME=$(date +"%I %M %p")
+
+# Get the current EST time
+EST_TIME=$(TZ=UTC+5 date +"%I %M %p")
+
+notify-send "Date is: ${CURRENT_DATE}\n\nTime is: ${T_HOUR_TIME}\n\nIn Maine its: ${EST_TIME}"
